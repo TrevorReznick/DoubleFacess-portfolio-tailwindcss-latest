@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div class="container mx-auto">
     <h1>Hello!</h1>
   </div>
 </template>
@@ -11,7 +11,7 @@ import headerComponent from '~/components/_header.vue'
 import mainComponent from '~/components/main.vue'
 
 export default {
-  name: 'IndexPage',
+  name: 'Index',
   components: {
     headerComponent,
     mainComponent

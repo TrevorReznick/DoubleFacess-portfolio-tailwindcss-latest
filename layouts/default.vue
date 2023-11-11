@@ -1,8 +1,6 @@
 <template>
   <div class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col">
-    <!--
-    <AppHeader />
-    -->
+    <appHeader />
     <!-- Render contents with transition -->
     <transition name="fade" mode="out-in">
       <Nuxt />
@@ -23,17 +21,24 @@
 
 <script>
 import feather from "feather-icons"
-/*
+import appHeader from "../components/appHeader.vue"
 
-import AppHeader from "../components/shared/AppHeader.vue";
+/*
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
 */
 export default {
+  components: { 
+    /*
+    AppFooter, 
+    BackToTop,
+    */ 
+    appHeader 
+  },
   data: () => {
     return {
       // Todo
-    };
+    }
   },
   mounted() {
     feather.replace();
