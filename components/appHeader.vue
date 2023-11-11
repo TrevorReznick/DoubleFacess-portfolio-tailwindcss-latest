@@ -14,7 +14,6 @@
               class="w-36"
               alt="Light Logo"
             />
-
             <img
               v-else
               src="~/static/logo-dark.png"
@@ -23,7 +22,6 @@
             />
           </NuxtLink>
         </div>
-
         <!-- Theme switcher small screen -->
         <button
           @click="themeSwitcher"
@@ -73,14 +71,7 @@
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              class="
-                h-7
-                w-7
-                mt-1
-                fill-current
-                text-secondary-dark
-                dark:text-ternary-light
-              "
+              class="h-7 w-7 mt-1 fill-current text-secondary-dark dark:text-ternary-light"
             >
               <path
                 v-if="isOpen"
@@ -170,7 +161,7 @@
     </div>
 
     <!-- Hire me modal -->
-    <HireMeModal
+    <hireModal
       :showModal="showModal"
       :modal="modal"
       :categories="categories"
@@ -181,12 +172,12 @@
 
 <script>
 import { mapState } from "vuex";
-import hireMeModal from "./hireModal.vue";
+import hireModal from "./hireModal.vue";
 //import AppNavigation from "./AppNavigation.vue";
 
 export default {
   components: {
-    hireMeModal,
+    hireModal,
     //AppNavigation,
   },
   data: () => {
