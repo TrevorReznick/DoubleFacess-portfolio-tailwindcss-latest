@@ -7,13 +7,11 @@
 
 <script>
 
-import headerComponent from '~/components/_header.vue'
 import mainComponent from '~/components/main.vue'
 
 export default {
   name: 'Index',
-  components: {
-    headerComponent,
+  components: {    
     mainComponent
   },
   computed: {
