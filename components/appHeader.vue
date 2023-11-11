@@ -121,14 +121,7 @@
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
-            class="
-              text-liText-ternary-dark
-              hover:text-gray-400
-              dark:text-liText-ternary-light
-              dark:hover:text-liBorder-primary-light
-              w-6
-              h-6
-            "
+            class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

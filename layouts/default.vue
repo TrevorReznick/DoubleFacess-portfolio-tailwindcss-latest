@@ -5,11 +5,8 @@
     <transition name="fade" mode="out-in">
       <Nuxt />
     </transition>
-
-    <!-- App footer
-    <AppFooter />
-    -->
-
+    <!-- App footer -->
+    <appFooter />
     <!-- Go back to top when scrolled down -->
     <div class="flex space-x-2 mr-8 mb-6 right-0 bottom-0 z-50 fixed items-center sm:space-x-4 ">
       <!--
@@ -22,17 +19,17 @@
 <script>
 import feather from "feather-icons"
 import appHeader from "../components/appHeader.vue"
-
+import appFooter from "../components/appFooter.vue"
 /*
-import AppFooter from "../components/shared/AppFooter.vue";
+
 import BackToTop from "../components/BackToTop.vue";
 */
 export default {
   components: { 
     /*
-    AppFooter, 
     BackToTop,
-    */ 
+    */
+    appFooter,  
     appHeader 
   },
   data: () => {
