@@ -89,14 +89,13 @@
         </div>
       </div>
 
-      <!-- Header links 
-      <AppNavigation
+      <!-- Header links -->
+      <appNavigation
         :isOpen="isOpen"
         :showModal="showModal"
         :modal="modal"
         :categories="categories"
       />
-      -->
       <!-- Header right section buttons -->
       <div
         class="hidden sm:flex justify-between items-center flex-col md:flex-row"
@@ -164,14 +163,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import hireModal from "./hireModal.vue";
-//import AppNavigation from "./AppNavigation.vue";
+import { mapState } from "vuex"
+import hireModal from "./hireModal.vue"
+import appNavigation from "./appNavigation.vue"
 
 export default {
   components: {
     hireModal,
-    //AppNavigation,
+    appNavigation,
   },
   data: () => {
     return {
