@@ -1,19 +1,3 @@
-<script>
-import { mapState } from "vuex";
-
-export default {
-  data: () => {
-    return {
-      projectName: "Nuxt.js & Tailwind CSS Portfolio",
-      author: "Joseph K.",
-    };
-  },
-  computed: {
-    ...mapState(["copyrightDate"]),
-  },
-};
-</script>
-
 <template>
   <div class="flex justify-center items-center text-center">
     <div
@@ -35,4 +19,19 @@ export default {
   </div>
 </template>
 
+<script>
+import { mapState } from "vuex";
+
+export default {
+  data: () => {
+    return {
+      projectName: "Nuxt.js & Tailwind CSS Portfolio",
+      author: "Joseph K.",
+    };
+  },
+  computed: {
+    ...mapState(["copyrightDate"]),
+  },
+};
+</script>
 <style lang="scss" scoped></style>
