@@ -14,9 +14,7 @@ export default {
 <template>
   <div class="container mx-auto">
     <appHero />
-    <!--
-    <ProjectsGrid />
-    -->
+    <projectsGrid />
     <!-- View more projects button -->
     <!--
     <div class="mt-5 sm:mt-14 flex justify-center">

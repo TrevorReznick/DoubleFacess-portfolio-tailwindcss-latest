@@ -4,7 +4,7 @@ import Vue from 'vue'
 export const state = () => ({
     my_projects: [
         {
-            
+               
         }
     ]
 })

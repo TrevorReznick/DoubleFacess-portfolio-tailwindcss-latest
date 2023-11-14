@@ -37,6 +37,10 @@ export const state = () => ({
     },
   ],
   copyrightDate: new Date().getFullYear(),
+  projectsGridSettings: {
+    projectsHeading: "Projects Portfolio",
+    projectsDescription: "Some of the projects I have successfully completed",
+  },
   socialProfiles: [
     {
       id: uuidv4(),
