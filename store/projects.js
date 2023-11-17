@@ -65,7 +65,7 @@ export const state = () => ({
 
 export const getters = {
     getProjectById: (state) => (id) => {
-        return state.projects.find((project) => project.id == id)
+        return state.my_projects.find((project) => project.id == id)
     }
 }
 

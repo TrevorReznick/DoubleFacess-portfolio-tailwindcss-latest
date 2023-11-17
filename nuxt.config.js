@@ -6,7 +6,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'my-project-2',
+    title: 'enzonav portfolio 0.1',
     htmlAttrs: {
       lang: 'en',
     },

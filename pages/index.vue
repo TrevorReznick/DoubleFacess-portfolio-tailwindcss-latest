@@ -1,10 +1,10 @@
 <script>
 
-import appHero from "../components/appHero.vue"
-
+import appHero from '../components/appHero.vue'
 /*
 import Button from "../components/reusable/Button.vue"
 */
+
 export default {
   scrollToTop: true,
   components: { appHero }//, Button },
@@ -15,6 +15,7 @@ export default {
   <div class="container mx-auto">
     <appHero />
     <projectsGrid />
+    
     <!-- View more projects button -->
     <!--
     <div class="mt-5 sm:mt-14 flex justify-center">

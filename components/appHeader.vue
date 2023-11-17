@@ -1,8 +1,7 @@
 <template>
   <nav id="nav" class="sm:container sm:mx-auto">
     <!-- Header -->
-    <div
-      class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6 ">
+    <div class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6 ">
       <!-- Header menu links and small screen hamburger menu -->
       <div class="flex justify-between items-center px-6 sm:px-0">
         <!-- Header logos -->

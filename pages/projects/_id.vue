@@ -11,16 +11,37 @@
 <script>
 
 import feather from "feather-icons"
-//import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue"
+import relatedProjects from "../../components/projectsRelatedProjects.vue"
 
 export default {
-  scrollToTop: true,
-  components: { ProjectRelatedProjects },
-  data: () => {
-    return {
-      // @todo
+    components: { 
+        relatedProjects 
+    },
+    data: () => {
+        return {
+        // @todo
+        }
+    },
+    computed: {
+        project() {
+            return this.$store.getters['projects/getProjectById'](this.$route.params.id)
+        },
+        url(obj) {
+            return this.externalLink(obj)
+        }
+    },
+    mounted() {
+        feather.replace()
+        this.externalLink(this.project)
+    },
+    updated() {
+        feather.replace()
+    },    
+    methods: {
+        externalLink(obj) {
+            return obj.url
+        }
     }
-  }
 }
 
 </script>

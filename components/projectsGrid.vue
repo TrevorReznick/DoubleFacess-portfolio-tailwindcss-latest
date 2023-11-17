@@ -63,7 +63,10 @@
         "
         aria-label="Single Project"
       >
+        <!--
         <NuxtLink :to="`/projects/${project.id}`">
+        -->
+        <a @click="showModal()">
           <div>
             <img
               :src="project.img"
@@ -84,22 +87,35 @@
             </span
             >
           </div>
-        </NuxtLink>
+        </a>
       </div>
     </div>
+    <!-- Hire me modal -->
+    <projectModal
+      :showModal="showModal"
+      :modal="modal"
+      :categories="['test', 'test', 'test']"
+      aria-modal="Hire Me Modal"
+    />
   </div>
 </template>
 
 <style lang='scss' scoped></style>
 
 <script>
+
 import { mapState } from 'vuex'
 import {mapGetters} from 'vuex'
 import feather from 'feather-icons'
 
+import projectModal from './projectModal.vue'
+
 export default {
+  component: {projectModal},
   data: () => {
     return {
+      isOpen: false,
+      modal: false,
       selectedProject: '',
       searchProject: '',
     };
@@ -127,6 +143,9 @@ export default {
     }
     */
   },
+  mounted() {
+    feather.replace();
+  },
   methods: {
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
@@ -139,9 +158,20 @@ export default {
       let project = new RegExp(this.searchProject, 'i');
       return this.projects.filter((el) => el.title.match(project));
     },
-  },
-  mounted() {
-    feather.replace();
-  },
-};
+    showModal() {
+      if (this.modal) {
+        // Stop screen scrolling
+        document
+          .getElementsByTagName("html")[0]
+          .classList.remove("overflow-y-hidden");
+        this.modal = false;
+      } else {
+        document
+          .getElementsByTagName("html")[0]
+          .classList.add("overflow-y-hidden");
+        this.modal = true;
+      }
+    },
+  }  
+}
 </script>
