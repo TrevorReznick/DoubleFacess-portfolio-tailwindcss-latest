@@ -47,14 +47,14 @@ export const state = () => ({
         },
         {
             title: "ES6 Javascript Porting",
-            id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbb",
+            id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbc",
             category: "Web Application",
             img: require('static/img/projects/todo1.png'),
             url: 'https://www.difalcoimmobiliare.it'
         },
         {
             title: "Open jAjax Demo",
-            id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbb",
+            id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbd",
             category: "Web Application",
             img: require('static/img/projects/todo1.png'),
             url: 'https://www.difalcoimmobiliare.it',

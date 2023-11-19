@@ -49,28 +49,19 @@
     <!-- Projects grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
       <div
-        v-for="project in filteredProjects"
-        :key="project.id"
-        class="
-          rounded-xl
-          shadow-lg
-          hover:shadow-xl
-          cursor-pointer
-          mb-10
-          sm:mb-0
-          bg-secondary-light
-          dark:bg-ternary-dark
-        "
+        v-for="is_project in filteredProjects"
+        :key="is_project.id"
+        class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
         aria-label="Single Project"
       >
         <!--
         <NuxtLink :to="`/projects/${project.id}`">
         -->
-        <a @click="showModal()">
+        <a @click="showModal(is_project.id)">
           <div>
             <img
-              :src="project.img"
-              :alt="project.title"
+              :src="is_project.img"
+              :alt="is_project.title"
               class="rounded-t-xl border-none"
             />
           </div>
@@ -78,7 +69,7 @@
             <p
               class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >
-              {{ project.title }}
+              {{ is_project.title }}
             </p>
             <span
               class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light"
@@ -91,12 +82,15 @@
       </div>
     </div>
     <!-- Hire me modal -->
+    <div v-if="modal">
     <projectModal
       :showModal="showModal"
       :modal="modal"
       :categories="['test', 'test', 'test']"
+      :project="project"
       aria-modal="Hire Me Modal"
     />
+  </div>
   </div>
 </template>
 
@@ -111,9 +105,12 @@ import feather from 'feather-icons'
 import projectModal from './projectModal.vue'
 
 export default {
-  component: {projectModal},
+  component: {
+    projectModal
+  },
   data: () => {
     return {
+      project: [],
       isOpen: false,
       modal: false,
       selectedProject: '',
@@ -129,11 +126,11 @@ export default {
     },
     filteredProjects() {
       if (this.selectedProject) {
-        return this.filterProjectsByCategory();
+        return this.filterProjectsByCategory()
       } else if (this.searchProject) {
-        return this.filterProjectsBySearch();
+        return this.filterProjectsBySearch()
       }
-      return this.projects;
+      return this.projects
     },
     projectsSettings() {
       return this._getter('projectsGridSettings')
@@ -147,29 +144,35 @@ export default {
     feather.replace();
   },
   methods: {
+    getProjectById: function(id) {
+      let temp  = this.projects.filter((project) => {
+        return project.id === id
+      })
+      return this.project = temp
+    },
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
-        let category =
-          item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        return category.includes(this.selectedProject);
-      });
+        let category = item.category.charAt(0).toUpperCase() + item.category.slice(1)
+        return category.includes(this.selectedProject)
+      })
     },
     filterProjectsBySearch() {
       let project = new RegExp(this.searchProject, 'i');
       return this.projects.filter((el) => el.title.match(project));
     },
-    showModal() {
+    showModal(id) {
+      console.log(this.getProjectById(id))
       if (this.modal) {
         // Stop screen scrolling
         document
           .getElementsByTagName("html")[0]
-          .classList.remove("overflow-y-hidden");
-        this.modal = false;
+          .classList.remove("overflow-y-hidden")
+        this.modal = false
       } else {
         document
           .getElementsByTagName("html")[0]
-          .classList.add("overflow-y-hidden");
-        this.modal = true;
+          .classList.add("overflow-y-hidden")
+        this.modal = true
       }
     },
   }  

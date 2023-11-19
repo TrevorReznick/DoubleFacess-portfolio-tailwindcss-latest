@@ -8,11 +8,10 @@
         <transition name="fade-up-down">
           <div v-show="modal" class="modal-wrapper flex items-center z-30">
             <div class="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative">
-              <div
-                class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light  dark:border-ternary-dark">
-                <h5 class="text-primary-dark dark:text-primary-light text-xl">
-                  What project are you looking for?
-                </h5>
+              <div class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light  dark:border-ternary-dark">
+                <h3 class="text-primary-dark dark:text-primary-light text-xl">
+                  {{ project[0].title }}
+                </h3>
                 <button
                   class="px-4 text-primary-dark dark:text-primary-light"
                   @click="showModal()"
@@ -21,12 +20,8 @@
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
-                <form
-                  @submit="
-                    (e) => {
-                      e.preventDefault;
-                    }
-                  "
+                <form 
+                  @submit="(e) => { e.preventDefault; }"
                   class="max-w-xl m-4 text-left"
                 >
                   <div class="mt-0">
@@ -114,18 +109,40 @@
 import feather from "feather-icons";
 import Button from "./button.vue";
 export default {
-  props: ["showModal", "modal", "categories"],
   components: { Button },
   data: () => {
     return {
       // @todo
     };
   },
+  props: {
+    showModal: {
+      type: Function,
+      required: false
+    },
+    modal: {
+      type: Boolean,
+      required: false
+    },    
+    categories: {
+      type: Array,
+      required: false
+    },
+    project: {
+      type: Array,
+      required: true
+    }
+  },
+  computed: {
+    _project() {
+      return this.project[0]
+    }
+  },  
   mounted() {
     feather.replace();
   },
   methods: {},
-};
+}
 </script>
 
 <style>
