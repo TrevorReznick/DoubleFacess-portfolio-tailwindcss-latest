@@ -83,14 +83,14 @@
     </div>
     <!-- Hire me modal -->
     <div v-if="modal">
-    <projectModal
-      :showModal="showModal"
-      :modal="modal"
-      :categories="['test', 'test', 'test']"
-      :project="project"
-      aria-modal="Hire Me Modal"
-    />
-  </div>
+      <projectModal
+        :showModal="showModal"
+        :modal="modal"
+        :categories="['test', 'test', 'test']"
+        :project="project"
+        aria-modal="Hire Me Modal"
+      />
+    </div>
   </div>
 </template>
 
