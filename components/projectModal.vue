@@ -44,6 +44,7 @@
             class="bg-card text-card-foreground shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-sm mx-auto" 
             data-v0-t="card"
           >
+            <!--
             <img 
               src="https://landingpage.fyi/topics/email-marketing-tools.svg" 
               alt="Product Image" 
@@ -52,7 +53,16 @@
               class="object-cover w-full rounded-lg" 
               style="aspect-ratio: 400 / 400; object-fit: cover;"
             >
-            <h2 class="text-primary-dark dark:text-primary-light text-xl pt-2">{{ project[0].title }}</h2>
+            -->
+            <img 
+              :src="project_detail[0].projectImage.img"
+              alt="Product Image" 
+              width="400" 
+              height="400" 
+              class="object-cover w-full rounded-lg" 
+              style="aspect-ratio: 400 / 400; object-fit: cover;"
+            >
+            <h2 class="text-primary-dark dark:text-primary-light text-xl pt-2">{{ project[0].category }}</h2>
             <p class="text-gray-500 dark:text-gray-400 mt-2">$99.99</p>
             <p class="text-gray-600 dark:text-gray-300 mt-2">
               This is a description of the product. It provides information about the product and its features.
@@ -100,6 +110,10 @@ export default {
       required: false
     },
     project: {
+      type: Array,
+      required: true
+    },
+    project_detail: {
       type: Array,
       required: true
     }

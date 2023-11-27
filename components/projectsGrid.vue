@@ -88,6 +88,7 @@
         :modal="modal"
         :categories="['test', 'test', 'test']"
         :project="project"
+        :project_detail="project_detail"
         aria-modal="Hire Me Modal"
       />
     </div>
@@ -111,6 +112,7 @@ export default {
   data: () => {
     return {
       project: [],
+      project_detail: [],
       isOpen: false,
       modal: false,
       selectedProject: '',
@@ -123,6 +125,9 @@ export default {
     }),
     projects() {
       return this.$store.state.projects['my_projects']
+    },
+    projects_details() {
+      return this.$store.state.projects['projects_details']
     },
     filteredProjects() {
       if (this.selectedProject) {
@@ -148,7 +153,10 @@ export default {
       let temp  = this.projects.filter((project) => {
         return project.id === id
       })
-      return this.project = temp
+      let temp1 = this.projects_details.filter((project_dt)=> {
+        return project_dt.id === id
+      })
+      return this.project = temp, this.project_detail = temp1
     },
     filterProjectsByCategory() {
       return this.projects.filter((item) => {
@@ -161,7 +169,8 @@ export default {
       return this.projects.filter((el) => el.title.match(project));
     },
     showModal(id) {
-      console.log(this.getProjectById(id))
+      this.getProjectById(id)
+      console.log(this.project)
       if (this.modal) {
         // Stop screen scrolling
         document
