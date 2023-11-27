@@ -1,108 +1,79 @@
 <template>
-  <transition name="fade">
-    <div v-show="modal" class="font-general-regular fixed inset-0 z-30">
-      <!-- Modal body background as backdrop -->
-      <div v-show="modal" @click="showModal()" class="bg-filter bg-black bg-opacity-50 fixed inset-0 w-full h-full z-20"></div>
-      <!-- Modal contents -->
-      <main class="flex flex-col items-center justify-center h-full w-full">
-        <transition name="fade-up-down">
-          <div v-show="modal" class="modal-wrapper flex items-center z-30">
-            <div class="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative">
-              <div class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light  dark:border-ternary-dark">
-                <h3 class="text-primary-dark dark:text-primary-light text-xl">
-                  {{ project[0].title }}
-                </h3>
-                <button
-                  class="px-4 text-primary-dark dark:text-primary-light"
-                  @click="showModal()"
-                >
-                  <i data-feather="x" class="w-8 sm:w-12"></i>
-                </button>
-              </div>
-              <div class="modal-body p-5 w-full h-full">
-                <form 
-                  @submit="(e) => { e.preventDefault; }"
-                  class="max-w-xl m-4 text-left"
-                >
-                  <div class="mt-0">
-                    <input
-                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-                      id="name"
-                      name="name"
-                      type="text"
-                      required=""
-                      placeholder="Name"
-                      aria-label="Name"
-                    />
-                  </div>
-                  <div class="mt-6">
-                    <input
-                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-                      id="email"
-                      name="email"
-                      type="text"
-                      required=""
-                      placeholder="Email"
-                      aria-label="Email"
-                    />
-                  </div>
-                  <div class="mt-6">
-                    <select
-                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required=""
-                      aria-label="Project Category"
-                    >
-                      <option
-                        v-for="category in categories"
-                        :key="category.id"
-                        :value="category.value"
-                      >
-                        {{ category.name }}
-                      </option>
-                    </select>
-                  </div>
-
-                  <div class="mt-6">
-                    <textarea
-                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-                      id="message"
-                      name="message"
-                      cols="14"
-                      rows="6"
-                      aria-label="Details"
-                      placeholder="Project description"
-                    ></textarea>
-                  </div>
-
-                  <div class="mt-6 pb-4 sm:pb-1">
-                    <Button
-                      title="Send Request"
-                      class="px-4 sm:px-6 py-2 sm:py-2.5 text-white bg-indigo-500 hover:bg-indigo-600 rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
-                      type="submit"
-                      aria-label="Submit Request"
-                    />
-                  </div>
-                </form>
-              </div>
-              <div
-                class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right"
+<transition name="fade">
+  <div v-show="modal" class="font-general-regular fixed inset-0 z-30">
+    <!-- Modal body background as backdrop -->
+    <div v-show="modal" @click="showModal()" class="bg-filter bg-black bg-opacity-50 fixed inset-0 w-full h-full z-20"></div>
+    <!-- Modal contents -->
+    <main class="flex flex-col items-center justify-center h-full w-full">
+      <transition name="fade-up-down">
+        <div v-show="modal" class="modal-wrapper flex items-center z-30">
+          <div class="modal bg-secondary-light dark:bg-primary-dark flex-row rounded-lg relative">
+          <!--
+          <div class="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative">
+            <div class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light  dark:border-ternary-dark">
+              <h3 class="text-primary-dark dark:text-primary-light text-xl">{{ project[0].title }}</h3>
+              <button
+                class="px-4 text-primary-dark dark:text-primary-light"
+                @click="showModal()"
               >
-                <Button
-                  title="Close"
-                  class="px-4 sm:px-6 py-2 bg-gray-600 text-primary-light hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
-                  @click="showModal()"
-                  aria-label="Close Hire Me Modal"
-                />
-              </div>
+                <i data-feather="x" class="w-8 sm:w-12"></i>
+              </button>
+            </div>
+            @@ to do @@
+            <div class="modal-body p-5 w-full h-full"></div>
+            <div class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right">
+              <Button
+                title="Close"
+                class="px-4 sm:px-6 py-2 bg-gray-600 text-primary-light hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
+                @click="showModal()"
+                aria-label="Close Hire Me Modal"
+              ></Button>
             </div>
           </div>
-        </transition>
-      </main>
-    </div>
-  </transition>
+          -->
+          <div class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light  dark:border-ternary-dark">
+            <h3 class="text-primary-dark dark:text-primary-light text-xl">{{ project[0].title }}</h3>
+            <button
+              class="px-4 text-primary-dark dark:text-primary-light"
+              @click="showModal()"
+            >
+              <i data-feather="x" class="w-8 sm:w-12"></i>
+            </button>
+          </div>
+          <div 
+            class="bg-card text-card-foreground shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-sm mx-auto" 
+            data-v0-t="card"
+          >
+            <img 
+              src="https://landingpage.fyi/topics/email-marketing-tools.svg" 
+              alt="Product Image" 
+              width="400" 
+              height="400" 
+              class="object-cover w-full rounded-lg" 
+              style="aspect-ratio: 400 / 400; object-fit: cover;"
+            >
+            <h2 class="text-primary-dark dark:text-primary-light text-xl pt-2">{{ project[0].title }}</h2>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">$99.99</p>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
+              This is a description of the product. It provides information about the product and its features.
+            </p>
+            <button 
+              class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg" 
+              type="submit"
+            >Add to Cart</button>
+          </div>
+          </div>
+          <!--
+          img: require("@/static/images/mobile-project-1.jpg"),
+          <div class="flex items-center justify-center mb-8">
+          <img :src="project.projectImages[0].img" class="rounded-xl shadow-lg" />
+          </div>
+          -->
+        </div>
+      </transition>
+    </main>
+  </div>
+</transition>
 </template>
 
 <script>
@@ -141,7 +112,9 @@ export default {
   mounted() {
     feather.replace();
   },
-  methods: {},
+  methods: {
+    
+  },
 }
 </script>
 
