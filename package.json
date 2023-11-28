@@ -30,6 +30,7 @@
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.3.5",
     "prettier": "^2.7.1",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "vue-backtotop": "^1.6.1"
   }
 }

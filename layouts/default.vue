@@ -9,26 +9,20 @@
     <appFooter />
     <!-- Go back to top when scrolled down -->
     <div class="flex space-x-2 mr-8 mb-6 right-0 bottom-0 z-50 fixed items-center sm:space-x-4 ">
-      <!--
       <BackToTop />
-      -->
     </div>
   </div>
 </template>
 
 <script>
-import feather from "feather-icons"
-import appHeader from "../components/appHeader.vue"
-import appFooter from "../components/appFooter.vue"
-/*
+import feather from 'feather-icons'
+import appHeader from '../components/appHeader.vue'
+import appFooter from '../components/appFooter.vue'
+import BackToTop from '../components/BackToTop.vue'
 
-import BackToTop from "../components/BackToTop.vue";
-*/
 export default {
   components: { 
-    /*
-    BackToTop,
-    */
+    BackToTop,    
     appFooter,  
     appHeader 
   },
