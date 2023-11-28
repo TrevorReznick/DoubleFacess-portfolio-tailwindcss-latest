@@ -32,7 +32,7 @@
           </div>
           -->
           <div class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light  dark:border-ternary-dark">
-            <h3 class="text-primary-dark dark:text-primary-light text-xl">{{ project[0].title }}</h3>
+            <h1 class="text-primary-dark dark:text-primary-light text-xl">{{ project[0].title }}</h1>
             <button
               class="px-4 text-primary-dark dark:text-primary-light"
               @click="showModal()"
@@ -67,10 +67,20 @@
             <p class="text-gray-600 dark:text-gray-300 mt-2">
               This is a description of the product. It provides information about the product and its features.
             </p>
-            <button 
-              class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg" 
-              type="submit"
-            >Add to Cart</button>
+            <div class="flex justify-center space-x-4">
+              <Button 
+                title="Visita"
+                class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg pl-1/4" 
+                type="submit"
+              />
+              <NuxtLink :to="`/project/${project[0].id}`">
+                <Button 
+                  title="Dettagli"
+                  class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg" 
+                  type="submit"
+                />
+              </NuxtLink>
+            </div>
           </div>
           </div>
           <!--
