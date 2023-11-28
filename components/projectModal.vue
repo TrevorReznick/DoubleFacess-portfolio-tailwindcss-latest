@@ -73,7 +73,7 @@
                 class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg pl-1/4" 
                 type="submit"
               />
-              <NuxtLink :to="`/project/${project[0].id}`">
+              <NuxtLink :to="`/projects/${project[0].id}`">
                 <Button 
                   title="Dettagli"
                   class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg" 
