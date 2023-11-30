@@ -9,13 +9,13 @@
           <NuxtLink to="/">
             <img
               v-if="this.$colorMode.value == 'dark'"
-              src="~/static/logo-light.png"
+              src="~/static/img/logo-light.png"
               class="w-36"
               alt="Light Logo"
             />
             <img
               v-else
-              src="~/static/logo-dark.png"
+              src="~/static/img/logo-dark.png"
               alt="Color Logo"
               class="w-36"
             />
