@@ -6,11 +6,7 @@
         Contact Form
       </p>
       <form
-        @submit="
-          (e) => {
-            e.preventDefault;
-          }
-        "
+        @submit.prevent="sendMailForm"
         class="font-general-regular space-y-7"
       >
         <div class="">
@@ -27,6 +23,7 @@
             required=""
             placeholder="Your Name"
             aria-label="Name"
+            v-model="msg.name"
           />
         </div>
         <div class="mt-6">
@@ -43,6 +40,7 @@
             required=""
             placeholder="Your Email"
             aria-label="Email"
+            v-model="msg.email"
           />
         </div>
         <div class="mt-6">
@@ -59,6 +57,7 @@
             required=""
             placeholder="Subject"
             aria-label="Subject"
+            v-model="msg.subject"
           />
         </div>
 
@@ -75,6 +74,7 @@
             cols="14"
             rows="6"
             aria-label="Message"
+            v-model="msg.text"
           ></textarea>
         </div>
 
@@ -84,6 +84,7 @@
             class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
             type="submit"
             aria-label="Send Message"
+            @click="sendMailForm"
           />
         </div>
       </form>
@@ -92,13 +93,81 @@
 </template>
 
 <script>
-import Button from "./button.vue";
+import axios from 'axios'
+import Button from './button.vue'
+
+const url = 'https://node-express-typescript.fly.dev/api'
+//const url = 'http://localhost:8080/api'
+
+const options = {
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
+  },
+}
+
+
 export default {
   components: { Button },
   data: () => {
     return {
-      // @todo
-    };
+      msg: {
+        name: '',
+        email: '',
+        subject: '',
+        text: '',
+      },
+    }
+  },
+  methods: {
+    sendMailForm: async function () {
+      console.log('sending data')
+      await axios
+        .post(url + '/send-email', this.msg, options)
+        .then((response) => {
+          let message = response.data.message
+          console.log(response.data)
+          if (message === 'success') {
+            console.log('client successfully sent email')
+          }
+        })
+        .catch((errors) => {
+          console.log('there is an error!')
+          console.log(errors)
+        })
+      /*
+      try {
+        const response = await this.$axios.get(API_URL + '/test-email', { 
+          //message: this.message
+        })
+        console.log(response.data)
+      } catch (e) {
+        console.error('Errore durante l\'invio dei dati:', e)
+      } 
+      alert('sent!')  
+      */
+    },
+    TestMailForm: async function () {
+      const headers = {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': '*',
+        },
+      }
+      console.log('sending data')
+      await axios
+        .get(url + '/test-mail')
+        .then((response) => {
+          let message = response.data.message
+          if (message === 'success') {
+            console.log('client successfully sent email')
+          }
+        })
+        .catch((errors) => {
+          console.log('there is an error!')
+          console.log(errors)
+        })
+    },
   },
 };
 </script>
