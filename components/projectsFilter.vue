@@ -3,20 +3,7 @@
     @change="$emit('change', $event.target.value)"
     :name="select"
     :id="select"
-    class="
-      font-general-medium
-      px-4
-      py-2
-      border-1 border-gray-200
-      dark:border-secondary-dark
-      rounded-lg
-      text-sm
-      sm:text-md
-      bg-secondary-light
-      dark:bg-ternary-dark
-      text-primary-dark
-      dark:text-ternary-light
-    "
+    class="font-general-medium px-4 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
   >
     <option value class="text-sm sm:text-md">All Projects</option>
     <option
@@ -32,22 +19,22 @@
 
 <script>
 export default {
-    props: {
-        select: {
-        type: String,
-        default: "projects",
-        },
-        selectOptions: {
-            type: Array,
-            default: () => [
-                "Web Application",
-                "Mobile Application",
-                "UI/UX Design",
-                "Branding & Anim",
-            ],
-        },
+  props: {
+    select: {
+      type: String,
+      default: 'projects',
     },
-};
+    selectOptions: {
+      type: Array,
+      default: () => [
+        'Web Application',
+        'Mobile Application',
+        'UI/UX Design',
+        'Branding & Anim',
+      ],
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>

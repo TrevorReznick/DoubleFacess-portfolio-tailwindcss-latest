@@ -15,9 +15,9 @@
               class="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative"
             >
               <div
-                class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark"
+                class="modal-header flex justify-between gap-10 p-5 pt-1 border-b border-ternary-light dark:border-ternary-dark"
               >
-                <div class="text-center px-4 py-6">
+                <div class="text-center px-0 py-0">
                   <p
                     class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
                   >
@@ -31,11 +31,13 @@
                   <i data-feather="x" class="w-8 sm:w-12"></i>
                 </button>
               </div>
-              <div class="modal-body p-5 w-full h-full">
+              <div class="modal-body w-full h-full overflow-y-auto bg-card text-card-foreground shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-sm mx-auto">
+                <!--
                 <div 
                   class="bg-card text-card-foreground shadow-sm border border-gray-200 dark:border-gray-800 rounded-lg p-4 max-w-sm mx-auto" 
                   data-v0-t="card"
                 >
+                -->
                   <!--
                   <img 
                     src="https://landingpage.fyi/topics/email-marketing-tools.svg" 
@@ -49,35 +51,21 @@
                   <img 
                     :src="project_detail[0].projectImage.img"
                     alt="Product Image" 
-                    width="400" 
-                    height="400" 
+                    width="420" 
+                    height="420" 
                     class="object-cover w-full rounded-lg" 
                     style="aspect-ratio: 400 / 400; object-fit: cover;"
                   >
                   <h2 class="text-primary-dark dark:text-primary-light text-xl pt-2">{{ project[0].category }}</h2>
                   <p class="text-gray-500 dark:text-gray-400 mt-2">$99.99</p>
-                  <p class="text-gray-600 dark:text-gray-300 mt-2">
-                    This is a description of the product. It provides information about the product and its features.
-                  </p> 
-                </div>               
+                  <p class="text-gray-600 dark:text-gray-300 mt-2">{{project_detail[0].objectives}}</p> 
+                <!--
+                </div>
+                -->
               </div>
               <div
                 class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right flex justify-center space-x-4"
               >
-                <!--
-                <Button 
-                  title="Visita"
-                  class="focus:outline-none inline-flex items-center justify-center"
-                  type="submit"
-                />
-                <NuxtLink :to="`/projects/${project[0].id}`">
-                  <Button 
-                    title="Dettagli"
-                    type="button"
-                    class="focus:outline-none inline-flex items-center justify-center"
-                  />
-                </NuxtLink>
-                -->
                 <NuxtLink :to="`/projects/${project[0].id}`">
                   <Button
                     title="Dettagli"
