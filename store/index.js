@@ -67,6 +67,25 @@ export const state = () => ({
       url: "https://youtube.com/c/realstoman",
     },
   ],
+  iconsSkills: [
+    'html5-plain',
+    'css3-plain',
+    'javascript-plain',
+    'typescript-plain',
+    'php-plain',
+    'nodejs-plain',
+    'express-original',
+    'php-plain',
+    'github-original',
+    'git-plain',
+    'bitbucket-original',
+    'vuejs-plain',
+    'nuxtjs-plain',
+    'codeigniter-plain',
+    'laravel-plain',
+    'symfony-original',
+    'mysql-plain'
+  ]
 })
 
 export const getters = {
