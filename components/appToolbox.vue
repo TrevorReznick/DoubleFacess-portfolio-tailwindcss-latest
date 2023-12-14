@@ -1,11 +1,14 @@
 <template>
-<div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
-  <div class="text-center mx-auto sm:mx-0 sm:self-center"> <!-- Aggiunta classe `mx-auto` e `sm:self-center` -->
-    <p class="font-general-semibold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light">toolbox</p>
-    <i class="devicon-apple-original text-ternary-dark dark:text-ternary-light text-lg custom-icon"></i>
-  </div>
+<div class="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
+    <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
+        <p class="font-general-semibold text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">Toolbox</p>
+        <ul class="flex gap-4 sm:gap-8">
+            <i class="devicon-html5-plain text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"></i>
+            <i class="devicon-html5-plain text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"></i>
+            <i class="devicon-html5-plain text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"></i>
+        </ul>
+    </div>
 </div>
-
 </template>
 
 <script>
@@ -18,13 +21,22 @@ export default {
     }
   },
   computed: {
-    ...mapState(['aboutMe']),
+    ...mapState(['iconsSkills']),
   },
+  methods: {
+    getIconClass(iconName) {
+        // La logica rimane la stessa come nel precedente esempio
+        const iconInfo = this.iconsSkills[iconName]
+        if (iconInfo) {
+            return `devicon-${iconName} text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500`
+        }
+    }
+  }
 }
 </script>
 
 <style scoped>
 .custom-icon {
-  font-size: 26px;
+  font-size: 28px;
 }
 </style>
