@@ -117,7 +117,7 @@ export const state = () => ({
             projectImage: {
                 id: uuidv4(),
                 title: "Uber Project Management UI",
-                img: require('static/img/projects/difalco-website-list.png'),
+                img: require('static/img/projects/difalco-cp-list.png')
                 //img: require('static/img/projects/difalco-website-energy.png'),
                 //img: require('static/img/projects/difalco-website-hero.png')
             },
@@ -162,9 +162,8 @@ export const state = () => ({
             projectImage: {
                 id: uuidv4(),
                 title: "Uber Project Management UI",
-                img: require('static/img/projects/difalco-website-list.png'),
-                //img: require('static/img/projects/difalco-website-energy.png'),
-                //img: require('static/img/projects/difalco-website-hero.png')
+                //img: require('static/img/projects/shop-list-2.png'),
+                img: require('static/img/projects/shop-list-3.png')
             },
             objectives: 
                 "Realizzare un applicazione shopping cart completa utilizzando il sistema di memorizzazione locale di indexedDb",
@@ -192,9 +191,8 @@ export const state = () => ({
             projectImage: {
                 id: uuidv4(),
                 title: "Uber Project Management UI",
-                img: require('static/img/projects/difalco-website-list.png'),
-                //img: require('static/img/projects/difalco-website-energy.png'),
-                //img: require('static/img/projects/difalco-website-hero.png')
+                //img: require('static/img/projects/domini-notif.png'),
+                img: require('static/img/projects/domini-login.png')
             },
             objectives: 
                 "Il progetto proposto consiste nello sviluppo di un backend basato su Node.js per gestire il sistema di notifiche push " + 
